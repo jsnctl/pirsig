@@ -5,4 +5,5 @@ type Note struct {
 	Duration float64 `yaml:"duration"`
 	WaveFn   string  `yaml:"wave"`
 	Decay    float64 `yaml:"decay"`
+	Reverb   bool    `yaml:"reverb"`
 }

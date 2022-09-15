@@ -7,7 +7,7 @@ import (
 )
 
 type Script struct {
-	Notes []model.Note `yaml:"notes"`
+	Sequence model.Sequence `yaml:"sequence"`
 }
 
 func Read() *Script {

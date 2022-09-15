@@ -11,7 +11,8 @@ func main() {
 	io.F, _ = os.Create(shared.OutputFile)
 	s := io.Read()
 
-	for _, note := range s.Notes {
+	notes := model.Arp(s.Sequence.Length, s.Sequence.Notes)
+	for _, note := range notes {
 		wave := model.CreateWave(note)
 		io.Monophonic(wave)
 	}
