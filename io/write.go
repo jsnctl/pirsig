@@ -1,14 +1,17 @@
-package main
+package io
 
 import (
 	"encoding/binary"
+	"github.com/jsnctl/pirsig/model"
 	"math"
 	"os"
 )
 
-func monophonic(note Note) {
-	for _, value := range note.wave {
-		writeNoteValue(value, f)
+var F *os.File
+
+func Monophonic(wave model.Wave) {
+	for _, value := range wave.Values {
+		writeNoteValue(value, F)
 	}
 }
 

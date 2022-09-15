@@ -1,0 +1,4 @@
+notes:
+  - {Seed: 400, Duration: 0.5, WaveFn: "sine"}
+  - {Seed: 410, Duration: 0.5, WaveFn: "sine"}
+  - {Seed: 412, Duration: 0.2, WaveFn: "sine"}

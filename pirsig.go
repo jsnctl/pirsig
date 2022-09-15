@@ -1,20 +1,18 @@
 package main
 
 import (
+	"github.com/jsnctl/pirsig/io"
+	"github.com/jsnctl/pirsig/model"
 	"github.com/jsnctl/pirsig/shared"
-	"github.com/jsnctl/pirsig/waveforms"
 	"os"
 )
 
-var f *os.File
-
 func main() {
-	f, _ = os.Create(shared.OutputFile)
+	io.F, _ = os.Create(shared.OutputFile)
+	s := io.Read()
 
-	values := []float64{400, 300, 200, 400, 300, 200}
-
-	for _, value := range values {
-		note := createNote(value, 0.2, waveforms.Sine)
-		monophonic(note)
+	for _, note := range s.Notes {
+		wave := model.CreateWave(note)
+		io.Monophonic(wave)
 	}
 }
