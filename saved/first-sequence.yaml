@@ -8,27 +8,27 @@ components:
   - length: 64
     notes:
     - {seed: 5, duration: 0.1, wave: "kick"}
-    - { seed: 10, duration: 0.1, wave: "kick"}
-    - { seed: 15, duration: 0.1, wave: "snare", decay: 2}
-    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+    - {seed: 10, duration: 0.1, wave: "kick"}
+    - {seed: 15, duration: 0.1, wave: "snare", decay: 2}
+    - {seed: 10, duration: 0.1, wave: "kick", decay: 2}
   - length: 64
     notes:
     - {seed: 5, duration: 0.1, wave: "kick"}
-    - { seed: 10, duration: 0.1, wave: "kick"}
-    - { seed: 15, duration: 0.1, wave: "kick"}
-    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+    - {seed: 10, duration: 0.1, wave: "kick"}
+    - {seed: 15, duration: 0.1, wave: "kick"}
+    - {seed: 10, duration: 0.1, wave: "kick", decay: 2}
   - length: 60
     notes:
     - {seed: 5, duration: 0.1, wave: "kick"}
-    - { seed: 10, duration: 0.1, wave: "kick"}
-    - { seed: 15, duration: 0.1, wave: "snare"}
-    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+    - {seed: 10, duration: 0.1, wave: "kick"}
+    - {seed: 15, duration: 0.1, wave: "snare"}
+    - {seed: 10, duration: 0.1, wave: "kick", decay: 2}
   - length: 5
     notes:
-      - {seed: 5, duration: 0.1, wave: "kick"}
-      - { seed: 10, duration: 0.1, wave: "kick"}
-      - { seed: 10, duration: 0.05, wave: "snare", decay: 2}
-      - { seed: 10, duration: 0.05, wave: "snare", decay: 2}
-      - { seed: 10, duration: 0.1, wave: "snare", decay: 2}
+    - {seed: 5, duration: 0.1, wave: "kick"}
+    - {seed: 10, duration: 0.1, wave: "kick"}
+    - {seed: 10, duration: 0.05, wave: "snare", decay: 2}
+    - {seed: 10, duration: 0.05, wave: "snare", decay: 2}
+    - {seed: 10, duration: 0.1, wave: "snare", decay: 2}
 
 
