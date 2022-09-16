@@ -82,3 +82,23 @@ func TestTriangle(t *testing.T) {
 
 	assert.Equal(t, 1.0, result[11])
 }
+
+func TestSawtooth(t *testing.T) {
+	Init()
+	result := waveformHarness(Sawtooth)
+
+	invertedTriangle := make([]float64, 10)
+	for i, value := range waveformHarness(Triangle)[:10] {
+		invertedTriangle[i] = 1 - value
+	}
+
+	for i, expected := range invertedTriangle {
+		assert.True(t,
+			shared.FloatingPointEqual(
+				expected,
+				result[i],
+				1e-10,
+			),
+		)
+	}
+}
