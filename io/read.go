@@ -7,7 +7,8 @@ import (
 )
 
 type Script struct {
-	Sequences []model.Sequence `yaml:"components"`
+	Distributions []model.Distribution `yaml:"distributions"`
+	Sequences     []model.Sequence     `yaml:"components"`
 }
 
 func Read() *Script {
