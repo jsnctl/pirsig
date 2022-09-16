@@ -1,10 +1,14 @@
 package waveforms
 
-import "math"
+import (
+	"github.com/jsnctl/pirsig/shared"
+	"math"
+)
 
 var Lookup = map[string]func(float64, float64) float64{
-	"sine":   Sine,
-	"square": Square,
+	"sine":     Sine,
+	"square":   Square,
+	"triangle": Triangle,
 }
 
 func Sine(angle float64, frequency float64) float64 {
@@ -16,4 +20,9 @@ func Square(angle float64, frequency float64) float64 {
 		return 1.0
 	}
 	return -1.0
+}
+
+func Triangle(angle float64, frequency float64) float64 {
+	sineValue := Sine(angle, frequency)
+	return (4 / (shared.Tau)) * math.Asin(sineValue)
 }
