@@ -5,13 +5,6 @@ import (
 	"math"
 )
 
-var Lookup = map[string]func(float64, float64) float64{
-	"sine":     Sine,
-	"square":   Square,
-	"triangle": Triangle,
-	"saw":      Sawtooth,
-}
-
 func Sine(angle float64, frequency float64) float64 {
 	return math.Sin(angle * frequency)
 }
