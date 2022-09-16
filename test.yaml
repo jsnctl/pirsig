@@ -1,11 +1,28 @@
-sequence:
-  length: 100
-  notes:
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4, reverb: True}
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4, reverb: True}
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4, reverb: True}
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4}
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4}
-  - {seed: 100, duration: 0.1, wave: "sine", decay: 4}
+components:
+  - length: 64
+    notes:
+    - {seed: 5, duration: 0.1, wave: "kick"}
+    - {seed: 10, duration: 0.1, wave: "kick"}
+    - {seed: 15, duration: 0.1, wave: "kick"}
+    - {seed: 10, duration: 0.1, wave: "kick", decay: 2}
+  - length: 64
+    notes:
+    - {seed: 5, duration: 0.1, wave: "kick"}
+    - { seed: 10, duration: 0.1, wave: "kick"}
+    - { seed: 15, duration: 0.1, wave: "snare"}
+    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+  - length: 64
+    notes:
+    - {seed: 5, duration: 0.1, wave: "kick"}
+    - { seed: 10, duration: 0.1, wave: "kick"}
+    - { seed: 15, duration: 0.1, wave: "kick"}
+    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+  - length: 64
+    notes:
+    - {seed: 5, duration: 0.1, wave: "kick"}
+    - { seed: 10, duration: 0.1, wave: "kick"}
+    - { seed: 15, duration: 0.1, wave: "snare"}
+    - { seed: 10, duration: 0.1, wave: "kick", decay: 2}
+
 
 
