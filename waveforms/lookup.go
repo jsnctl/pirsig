@@ -6,4 +6,5 @@ var Lookup = map[string]func(float64, float64) float64{
 	"triangle": Triangle,
 	"saw":      Sawtooth,
 	"kick":     Kick,
+	"snare":    Snare,
 }
