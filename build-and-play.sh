@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-go test ./...
+go test ./.../test
 go build
 ./pirsig
 
