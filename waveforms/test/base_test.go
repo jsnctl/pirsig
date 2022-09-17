@@ -1,7 +1,8 @@
-package waveforms
+package test
 
 import (
 	"github.com/jsnctl/pirsig/shared"
+	"github.com/jsnctl/pirsig/waveforms"
 	"github.com/stretchr/testify/assert"
 	"math"
 	"testing"
@@ -30,7 +31,7 @@ func waveformHarness(waveform func(float64, float64) float64) []float64 {
 
 func TestSine(t *testing.T) {
 	Init()
-	result := waveformHarness(Sine)
+	result := waveformHarness(waveforms.Sine)
 
 	expectedFirstTen := []float64{
 		0, 0.14231483827328514, 0.28173255684142967, 0.4154150130018864,
@@ -51,7 +52,7 @@ func TestSine(t *testing.T) {
 
 func TestSquare(t *testing.T) {
 	Init()
-	result := waveformHarness(Square)
+	result := waveformHarness(waveforms.Square)
 
 	assert.Equal(t, 1.0, result[0])
 	assert.Equal(t, -1.0, result[23])
@@ -61,7 +62,7 @@ func TestSquare(t *testing.T) {
 
 func TestTriangle(t *testing.T) {
 	Init()
-	result := waveformHarness(Triangle)
+	result := waveformHarness(waveforms.Triangle)
 
 	// not perfect assertions for triangle wave
 	expectedFirstTen := []float64{
@@ -85,10 +86,10 @@ func TestTriangle(t *testing.T) {
 
 func TestSawtooth(t *testing.T) {
 	Init()
-	result := waveformHarness(Sawtooth)
+	result := waveformHarness(waveforms.Sawtooth)
 
 	invertedTriangle := make([]float64, 10)
-	for i, value := range waveformHarness(Triangle)[:10] {
+	for i, value := range waveformHarness(waveforms.Triangle)[:10] {
 		invertedTriangle[i] = 1 - value
 	}
 
