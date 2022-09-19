@@ -1,11 +1,12 @@
 package model
 
 type Note struct {
-	Seed     interface{} `yaml:"seed"`
-	Duration interface{} `yaml:"duration"`
-	WaveFn   string      `yaml:"wave"`
-	Decay    float64     `yaml:"decay"`
-	Reverb   bool        `yaml:"reverb"`
+	Seed      interface{} `yaml:"seed"`
+	Duration  interface{} `yaml:"duration"`
+	WaveFn    string      `yaml:"wave"`
+	Decay     float64     `yaml:"decay"`
+	Reverb    bool        `yaml:"reverb"`
+	Amplitude float64     `yaml:"amplitude"`
 }
 
 func (n *Note) GetSeed() float64 {

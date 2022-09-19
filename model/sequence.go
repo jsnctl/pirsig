@@ -1,8 +1,12 @@
 package model
 
 type Sequence struct {
-	Length int    `yaml:"length"`
-	Notes  []Note `yaml:"notes"`
+	Length int     `yaml:"length"`
+	Tracks []Track `yaml:"tracks"`
+}
+
+type Track struct {
+	Notes []Note `yaml:"notes"`
 }
 
 func Arp(length int, pattern []Note) []Note {

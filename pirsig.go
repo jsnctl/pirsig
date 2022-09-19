@@ -12,10 +12,21 @@ func main() {
 	s := io.Read()
 
 	for _, sequence := range s.Sequences {
-		notes := model.Arp(sequence.Length, sequence.Notes)
-		for _, note := range notes {
-			wave := model.CreateWave(note)
-			io.Monophonic(wave)
+		if len(sequence.Tracks) > 1 {
+			left := model.Arp(sequence.Length, sequence.Tracks[0].Notes)
+			right := model.Arp(sequence.Length, sequence.Tracks[1].Notes)
+			for i := range left {
+				leftWave := model.CreateWave(left[i])
+				rightWave := model.CreateWave(right[i])
+				combined := io.Polyphonic(leftWave, rightWave)
+				io.Monophonic(combined)
+			}
+		} else {
+			notes := model.Arp(sequence.Length, sequence.Tracks[0].Notes)
+			for _, note := range notes {
+				wave := model.CreateWave(note)
+				io.Monophonic(wave)
+			}
 		}
 	}
 

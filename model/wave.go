@@ -17,6 +17,11 @@ func CreateWave(note Note) Wave {
 	wave := Wave{}
 	seed := note.GetSeed()
 	duration := note.GetDuration()
+
+	if note.Amplitude == 0 {
+		note.Amplitude = 1
+	}
+
 	nSamples := int(duration * shared.SampleRate)
 	waveFunction := waveforms.WaveformLookup[note.WaveFn]
 	angleIncrement := shared.Tau / float64(nSamples)
@@ -28,7 +33,7 @@ func CreateWave(note Note) Wave {
 			decayFactor = math.Exp(-angle / note.Decay)
 		}
 
-		sample := waveFunction(angle, seed) * decayFactor
+		sample := note.Amplitude * waveFunction(angle, seed) * decayFactor
 		wave.Values = append(wave.Values, sample)
 	}
 
