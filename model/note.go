@@ -1,9 +1,11 @@
 package model
 
+import "github.com/jsnctl/pirsig/waveforms"
+
 type Note struct {
 	Seed      interface{} `yaml:"seed"`
 	Duration  interface{} `yaml:"duration"`
-	WaveFn    string      `yaml:"wave"`
+	Waveform  interface{} `yaml:"waveform"`
 	Decay     float64     `yaml:"decay"`
 	Reverb    bool        `yaml:"reverb"`
 	Amplitude float64     `yaml:"amplitude"`
@@ -41,4 +43,18 @@ func (n *Note) GetDuration() float64 {
 	}
 
 	return 0
+}
+
+func (n *Note) GetWaveform() func(float64, float64) float64 {
+	waveform := waveforms.TryWaveform(n.Waveform)
+	if waveform != nil {
+		return waveforms.WaveformLookup[waveform.Type]
+	}
+
+	switch n.Waveform.(type) {
+	case string:
+		return waveforms.WaveformLookup[n.Waveform.(string)]
+	}
+
+	return nil
 }

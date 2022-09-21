@@ -2,7 +2,6 @@ package model
 
 import (
 	"github.com/jsnctl/pirsig/shared"
-	"github.com/jsnctl/pirsig/waveforms"
 	"math"
 )
 
@@ -17,13 +16,13 @@ func CreateWave(note Note) Wave {
 	wave := Wave{}
 	seed := note.GetSeed()
 	duration := note.GetDuration()
+	waveform := note.GetWaveform()
 
 	if note.Amplitude == 0 {
 		note.Amplitude = 1
 	}
 
 	nSamples := int(duration * shared.SampleRate)
-	waveFunction := waveforms.WaveformLookup[note.WaveFn]
 	angleIncrement := shared.Tau / float64(nSamples)
 
 	for i := 0; i <= nSamples; i++ {
@@ -33,7 +32,7 @@ func CreateWave(note Note) Wave {
 			decayFactor = math.Exp(-angle / note.Decay)
 		}
 
-		sample := note.Amplitude * waveFunction(angle, seed) * decayFactor
+		sample := note.Amplitude * waveform(angle, seed) * decayFactor
 		wave.Values = append(wave.Values, sample)
 	}
 
