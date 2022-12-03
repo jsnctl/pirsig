@@ -11,67 +11,74 @@ distributions:
     choices: [10, 11, 11.4, 15]
 components:
   - length: 60
-    notes:
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-    - {seed: 5, duration: 0.1, wave: "saw", decay: 2, reverb: True}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
+    tracks:
+      - notes:
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
+          - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+          - {seed: 5, duration: 0.1, waveform: "saw", decay: 2, reverb: True}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
 
   - length: 5
-    notes:
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: 5, duration: 0.1, wave: "saw", decay: 2, reverb: True}
-    - {seed: 6, duration: 0.1, wave: "saw", decay: 2, reverb: True}
+    tracks:
+      - notes:
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: 5, duration: 0.1, waveform: "saw", decay: 2, reverb: True}
+          - {seed: 6, duration: 0.1, waveform: "saw", decay: 2, reverb: True}
 
   - length: 30
-    notes:
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-    - {seed: 5, duration: 0.1, wave: "saw", decay: 2, reverb: True}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
+    tracks:
+      - notes:
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
+          - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+          - {seed: 5, duration: 0.1, waveform: "saw", decay: 2, reverb: True}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
 
   - length: 5
-    notes:
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: 5, duration: 0.1, wave: "saw", reverb: True}
-    - {seed: 6, duration: 0.1, wave: "saw", reverb: True}
-
-  - length: 60
-    notes:
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-    - {seed: 5, duration: 0.1, wave: "saw", decay: 2, reverb: True}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
-
-  - length: 10
-    notes:
-    - {seed: 15, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-    - {seed: 18, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-
-  - length: 5
-    notes:
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: 0.03, wave: "kick", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: 5, duration: 0.1, wave: "saw", reverb: True}
-    - {seed: 6, duration: 0.1, wave: "saw", reverb: True}
+    tracks:
+      - notes:
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: 5, duration: 0.1, waveform: "saw", reverb: True}
+          - {seed: 6, duration: 0.1, waveform: "saw", reverb: True}
 
   - length: 60
     tracks:
-    - notes:
-      - { seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2 }
-      - { seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2 }
-      - { seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True }
-      - { seed: 5, duration: 0.1, wave: "saw", decay: 2, reverb: True }
-      - { seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2 }
-    - notes:
-      - { seed: *gauss1, duration: *gauss2, wave: "square", decay: 2 }
+      - notes:
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
+          - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+          - {seed: 5, duration: 0.1, waveform: "saw", decay: 2, reverb: True}
+          - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
+
+  - length: 10
+    tracks:
+      - notes:
+          - {seed: 15, duration: *gauss2, waveform: "kick", decay: 2}
+          - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+          - {seed: 18, duration: *gauss2, waveform: "kick", decay: 2}
+          - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+
+  - length: 5
+    tracks:
+      - notes:
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: 0.03, waveform: "kick", decay: 2}
+          - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+          - {seed: 5, duration: 0.1, waveform: "saw", reverb: True}
+          - {seed: 6, duration: 0.1, waveform: "saw", reverb: True}
+
+  - length: 60
+    tracks:
+      - notes:
+          - { seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2 }
+          - { seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2 }
+          - { seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True }
+          - { seed: 5, duration: 0.1, waveform: "saw", decay: 2, reverb: True }
+          - { seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2 }
+      - notes:
+          - { seed: *gauss1, duration: *gauss2, waveform: "square", decay: 2 }

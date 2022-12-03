@@ -11,8 +11,9 @@ distributions:
     choices: [10, 11, 11.4, 15]
 components:
   - length: 300
-    notes:
-    - {seed: *gauss1, duration: *gauss2, wave: "snare", decay: 2}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
-    - {seed: *choice, duration: 0.05, wave: "saw", decay: 2, reverb: True}
-    - {seed: *gauss1, duration: *gauss2, wave: "kick", decay: 2}
+    tracks:
+    - notes:
+      - {seed: *gauss1, duration: *gauss2, waveform: "snare", decay: 2}
+      - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}
+      - {seed: *choice, duration: 0.05, waveform: "saw", decay: 2, reverb: True}
+      - {seed: *gauss1, duration: *gauss2, waveform: "kick", decay: 2}

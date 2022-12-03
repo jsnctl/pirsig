@@ -1,23 +1,28 @@
-distributions:
+seedributions:
   - &gauss
       mu: 6
       sigma: 0.3
       type: "gaussian"
 components:
   - length: 50
-    notes:
-    - {dist: *gauss, duration: 0.1, wave: "saw", decay: 5, reverb: True}
+    tracks:
+    - notes:
+      - {seed: *gauss, duration: 0.1, waveform: "saw", decay: 5, reverb: True}
   - length: 5
-    notes:
-    - {dist: *gauss, duration: 0.15, wave: "saw", decay: 3, reverb: True}
+    tracks:
+    - notes:
+      - {seed: *gauss, duration: 0.15, waveform: "saw", decay: 3, reverb: True}
   - length: 40
-    notes:
-    - {dist: *gauss, duration: 0.1, wave: "saw", decay: 3, reverb: True}
-    - {dist: *gauss, duration: 0.1, wave: "sine", decay: 10, reverb: True}
+    tracks:
+    - notes:
+      - {seed: *gauss, duration: 0.1, waveform: "saw", decay: 3, reverb: True}
+      - {seed: *gauss, duration: 0.1, waveform: "sine", decay: 10, reverb: True}
   - length: 50
-    notes:
-    - {dist: *gauss, duration: 0.1, wave: "saw", decay: 5, reverb: True}
+    tracks:
+    - notes:
+      - {seed: *gauss, duration: 0.1, waveform: "saw", decay: 5, reverb: True}
   - length: 40
-    notes:
-    - {dist: *gauss, duration: 0.1, wave: "saw", decay: 3, reverb: True}
-    - {dist: *gauss, duration: 0.1, wave: "sine", decay: 10, reverb: True}
+    tracks:
+    - notes:
+      - {seed: *gauss, duration: 0.1, waveform: "saw", decay: 3, reverb: True}
+      - {seed: *gauss, duration: 0.1, waveform: "sine", decay: 10, reverb: True}
