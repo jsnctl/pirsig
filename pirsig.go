@@ -19,7 +19,8 @@ func main() {
 				leftWave := model.CreateWave(left[i])
 				rightWave := model.CreateWave(right[i])
 				combined := io.Polyphonic(leftWave, rightWave)
-				io.Monophonic(combined)
+				io.Monophonic(model.LowPass(combined, 1000))
+				//io.Monophonic(combined)
 			}
 		} else {
 			notes := model.Arp(sequence.Length, sequence.Tracks[0].Notes)

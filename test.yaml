@@ -1,19 +1,18 @@
-waveforms:
-  - &additive
-    type: "additive"
-
 distributions:
-  - &choice1
-    type: "choice"
-    choices: [30, 35, 31, 40]
-  - &choice2
-    type: "choice"
-    choices: [0.05, 0.1]
-
+ - &gauss2
+   mu: 5
+   sigma: 0.2
+   type: "gaussian"
+ - &gauss3
+   mu: 10
+   sigma: 5
+   type: "gaussian"
 components:
-  - length: 50
+  - length: 1000
     tracks:
-    - notes:
-      - {seed: *choice1, duration: *choice2, waveform: *additive}
+      - notes:
+          - {seed: *gauss2, duration: 0.061, waveform: "kick"}
+      - notes:
+          - {seed: *gauss3, duration: 0.061, waveform: "snare"}
 
 

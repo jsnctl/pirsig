@@ -1,4 +1,4 @@
-seedributions:
+distributions:
   - &gauss
       mu: 6
       sigma: 0.3

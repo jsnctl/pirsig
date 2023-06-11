@@ -49,3 +49,18 @@ func CreateWave(note Note) Wave {
 
 	return wave
 }
+
+func LowPass(wave Wave, freq float64) Wave {
+	K := math.Tan((math.Pi * freq) / shared.SampleRate)
+	b0 := K / (K + 1)
+	b1 := K / (K + 1)
+	a1 := (K - 1) / (K + 1)
+	for i := range wave.Values {
+		if i == 0 || i >= len(wave.Values) {
+			continue
+		}
+		wave.Values[i] = wave.Values[i] - a1*wave.Values[i-1]
+		wave.Values[i] = (b0 * wave.Values[i]) + (b1 * wave.Values[i-1])
+	}
+	return wave
+}
